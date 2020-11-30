@@ -1,4 +1,4 @@
-DOCKER_TAG ?= fixes_nov_2020
+DOCKER_TAG ?= latest
 TINYOWS_BRANCH ?= fixes_nov_2020
 DOCKER_IMAGE = camptocamp/tinyows
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
