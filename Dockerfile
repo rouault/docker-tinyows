@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG TINYOWS_BRANCH
-RUN git clone https://github.com/mapserver/tinyows.git --branch=${TINYOWS_BRANCH} --depth=100 /src
+RUN git clone https://github.com/rouault/tinyows.git --branch=${TINYOWS_BRANCH} --depth=100 /src
 
 ENV \
     CXX="/usr/lib/ccache/clang++" \
