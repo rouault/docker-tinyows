@@ -1,5 +1,5 @@
 DOCKER_TAG ?= latest
-TINYOWS_BRANCH ?= main
+TINYOWS_BRANCH ?= geometry_less_tables
 DOCKER_IMAGE = camptocamp/tinyows
 ROOT = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 GID = $(shell id -g)
