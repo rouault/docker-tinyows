@@ -6,5 +6,5 @@ if [[ "${TINYOWS_CATCH_SEGV}" == 1 ]]
 then
     exec catchsegv /usr/local/bin/tinyows "$@" > /var/log/tinyows.log 2>&1
 else
-    exec /usr/local/bin/tinyows "$@" 2>&1
+    exec valgrind /usr/local/bin/tinyows "$@" 2>&1
 fi

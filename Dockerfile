@@ -18,7 +18,7 @@ ENV \
 WORKDIR /src/
 
 RUN autoconf
-RUN ./configure --prefix /usr/local
+RUN CFLAGS=-g ./configure --prefix /usr/local
 RUN make
 
 RUN ccache -M10G
@@ -45,7 +45,7 @@ ENV APACHE_CONFDIR=/etc/apache2 \
 
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
-        apache2 libapache2-mod-fcgid libpq5 libfcgi0ldbl libxml2 libfl2 && \
+        apache2 libapache2-mod-fcgid libpq5 libfcgi0ldbl libxml2 libfl2 valgrind && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     a2enmod fcgid headers && \
